@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        "terraform"
+        "org.jenkinsci.plugins.terraform.TerraformInstallation" "terraform"
     }
     
     } 
@@ -16,5 +16,5 @@ pipeline {
                 }
             }
         }
-  
+    
 }
