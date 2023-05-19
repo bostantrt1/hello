@@ -3,18 +3,15 @@ pipeline{
     tools {
         terraform 'terraform'
     }
-    
-    } 
-    stages {
-            stage('Terraform'){
+
+
+    stages{
+        stage('Create Infrastructure for the App') {
             steps {
-                dir('jenkins-terraform-pipeline/ec2_pipeline/'){
-                    sh "terraform init "
-                    sh "terraform apply --auto-approve"
-                    sh "echo \$PWD"
-                    sh "whoami"
-                }
+                echo 'Creating Infrastructure for the App on AWS Cloud'
+                sh 'terraform init'
+                sh 'terraform apply --auto-approve'
             }
         }
-    
+    }
 }
