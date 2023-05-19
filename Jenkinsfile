@@ -1,7 +1,7 @@
-pipeline {
+pipeline{
     agent any
     tools {
-        "org.jenkinsci.plugins.terraform.TerraformInstallation" "terraform"
+        terraform 'terraform'
     }
     
     } 
